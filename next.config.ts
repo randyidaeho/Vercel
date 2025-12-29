@@ -4,4 +4,6 @@ const nextConfig: NextConfig = {
   /* config options here */
 };
 
-export default nextConfig;
+export default nextConfig;pnpm create next-app@latest my-app --yes
+cd my-app
+pnpm dev
