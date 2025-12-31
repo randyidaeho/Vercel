@@ -1,8 +1,15 @@
-{
-  "dependencies": {
-    "@twa-dev/sdk": "^7.2.0",
-    "@tonconnect/ui-react": "^2.0.0",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  }
-}
+// src/main.tsx (React + Vite)
+import { SDKProvider } from '@twa-dev/sdk';
+import App from './App';
+
+ReactDOM.createRoot(document.getElementById('root')!).render(
+  <SDKProvider>
+    <App />
+  </SDKProvider>
+);
+
+// In App.tsx
+useEffect(() => {
+  Telegram.WebApp.ready();
+  Telegram.WebApp.expand(); // Fullscreen
+}, []);
