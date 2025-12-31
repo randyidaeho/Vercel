@@ -1,1 +1,36 @@
+import React, { useEffect } from 'react';
+import WebApp from '@twa-dev/sdk';
+import { TonConnectButton } from '@tonconnect/ui-react';
 
+function App() {
+  useEffect(() => {
+    WebApp.ready();
+    WebApp.expand();
+    WebApp.setHeaderColor('#000000');
+    WebApp.setBackgroundColor('#000000');
+  }, []);
+
+  return (
+    <div className="min-h-screen bg-black text-gold flex flex-col items-center justify-center p-6">
+      <h1 className="text-4xl font-bold mb-2">TIMEŒ OMNIA</h1>
+      <p className="text-xl mb-8 opacity-80">Tempus Omnia Revelat</p>
+      
+      <div className="bg-gradient-to-br from-blue-900 to-purple-900 rounded-2xl p-8 mb-8 text-center">
+        <h2 className="text-2xl mb-4">Bank Your Time</h2>
+        <p className="mb-6">Complete focus sessions to earn $TIME</p>
+        <button className="bg-gold text-black px-8 py-4 rounded-full text-xl font-bold">
+          Start 25min Focus → Earn $TIME
+        </button>
+      </div>
+
+      <TonConnectButton />
+      
+      <div className="mt-8 text-center">
+        <p className="text-sm opacity-60">Invite friends → Both earn bonus $TIME</p>
+        <button className="mt-4 underline">Share → Get Rewards</button>
+      </div>
+    </div>
+  );
+}
+
+export default App;
