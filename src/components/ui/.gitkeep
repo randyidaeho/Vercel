@@ -1,1 +1,7 @@
-
+() recv_internal() {
+  ;; User completes focus session
+  var user = sender();
+  var time_earned = 100; ;; base units
+  ;; Apply streak multiplier
+  mint_TIME_to(user, time_earned);
+}
